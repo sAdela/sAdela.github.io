@@ -280,26 +280,3 @@
   font-size: 40px;
   font-family: 'Gruppo';
 }
-.photos .cybersecurity .overCyberSec .textOnHoverCyber{
-  text-align: center;
-  color: white;
-  display: none;
-  position: absolute;
-  font-family: 'Gruppo';
-  font-size: 25px;
-}
-.photos .cybersecurity .overCyberSec:hover .textOnHoverCyber {
-  margin-left:300px;
-  margin-right:auto;
-  display: block;
-  animation: left_to_right2 1.5s ease;  
-}
-
-@keyframes left_to_right2 {
-  from {
-    margin-left: 20%;
-  }
-  to {
-    margin-left: 41.7%;
-  }
-}
