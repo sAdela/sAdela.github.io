@@ -66,16 +66,6 @@
   top: 0;
   left: 0;
 }
-.make_fullscreen video {
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
 
   video#myVideo{
   min-width: 100%;
@@ -83,6 +73,10 @@
   width: auto;
   background: "Hello-World.mp4";
   background-size: cover; 
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .ParallaxVideo{ 
