@@ -283,10 +283,10 @@
 }
 
 
-@media screen and (max-device-width: 600px){
+@media screen and (max-width: 760px){
   background: rgba(0,0,0,0);
   position: absolute;
-  top: 20%; right: 0; bottom: 0; left: 0;  /* promjenila top iz pixela  */
+  top: 15%; right: 0; bottom: 0; left: 0;  /* promjenila top iz pixela  */
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
