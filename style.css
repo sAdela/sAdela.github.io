@@ -281,7 +281,12 @@
   font-size: 40px;
   font-family: 'Gruppo';
 }
-
+body{
+  width:100%;
+  margin:auto; 
+  min-width:600px;
+  max-width:2000px;
+}
 
 @media screen and (max-width: 760px){
   background: rgba(0,0,0,0);
