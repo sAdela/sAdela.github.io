@@ -100,7 +100,7 @@
 .overlay-desc h1{
   background: rgba(0,0,0,0);
   position: absolute;
-  top: 350px; right: 0; bottom: 0; left: 0;  /* promjenila top iz pixela  50%*/
+  top: 320px; right: 0; bottom: 0; left: 0;  /* promjenila top iz pixela  50%*/
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
   .overlay-desc p{
     background: rgba(0,0,0,0);
     position: absolute;
-    top: 650px; right: 0; bottom: 0; left: 0;   /*  takoder promjenila top iz pixela 85%*/
+    top: 600px; right: 0; bottom: 0; left: 0;   /*  takoder promjenila top iz pixela 85%*/
     margin-left: auto;
     margin-right: auto;
     text-transform: uppercase;
@@ -125,7 +125,7 @@
   .overlay-desc img{
     background: rgba(0,0,0,0);
     position: absolute;
-    top: 92%; right: 0; bottom: 0; left: 0; /*  bilo 700px */
+    top: 620px; right: 0; bottom: 0; left: 0; /*  bilo 700px */
     display: flex;
     margin-left: auto;
     margin-right: auto;
