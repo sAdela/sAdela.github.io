@@ -24,7 +24,7 @@
 
 .menu ul li a{
     font-family: 'Lato';
-    font-size: 10px;
+    font-size: 13px;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -58,6 +58,9 @@
   background: rgb(145,142,142);
 }
 
+.line{
+  width:30%;
+}
 
 .make_fullscreen{
   width:100%;
