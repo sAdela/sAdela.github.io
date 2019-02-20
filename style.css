@@ -132,6 +132,15 @@
     cursor:pointer;
 }
 
+.technologies{
+  position: absolute;
+  right: 20px;
+  bottom: 0px;    
+}
+
+.htmlcssjs{
+  width: 170px;
+}
 
   @font-face {
     font-family: 'Lato';
