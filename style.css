@@ -212,7 +212,6 @@ input{
 }
 #submit:hover {
     opacity:0.6;
-    cursor: pointer;
 }
 textarea {
 	width:200px;
