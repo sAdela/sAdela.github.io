@@ -14,18 +14,41 @@
     <meta name="msapplication-TileImage" content="pictures/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="pictures/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="pictures/mstile-150x150.png" />
+    <script src="script.js"></script>
 
 </head>
 
-<body style="margin:0;">
+<body class="contactBody">
 
     <div class="menu">
 
-    <img width="80px" src="pictures/linux.png">
+    <a href="index.html"><img width="90px" src="pictures/linux.png"></a>
     <ul>
         <li><a class="link" href="index.html">Home</a></li>
         <li><a class="link" href="contact.html">Contact</a></li>
      </ul>
 
     </div>
-</head>
+    <canvas class="connecting-dots"></canvas>
+
+    <div class="textOverCanvas">
+        <h1>Want To Have An Awesome Web Page?</h1>
+    </div>
+    <div class="formForContact">
+        <form method="post" action="send_form_email.php">
+        
+            <label>Name</label>
+            <input name="name" autocomplete="Off">
+                    
+            <label>Email</label>
+            <input name="email" type="email" autocomplete="Off">
+                    
+            <label>Message</label>
+            <textarea name="message"  autocomplete="Off"></textarea>
+            <br><br>
+            <input id="submit" name="submit" type="submit" value="Submit">
+                
+        </form>
+     
+    </div>
+</body>
