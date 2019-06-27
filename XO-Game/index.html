@@ -1,8 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>XO-Game!</title>
+    <title>XO-Game!</title>
+    <link rel="icon" type="image/png" href="pictures/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="pictures/favicon-32x32.png" sizes="32x32" /> 
+    <link rel="icon" type="image/png" href="pictures/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
+    <div id="bg"></div>
+    <div id="wrapper">
+
+        <div id="text">
+            CAN YOU BEAT SUPER INTELLIGENT COMPUTER?
+        </div>
+        <div id="game">
+            <div id="gameWrapper">
+                <div id="top">
+                    <div id="topLeft">
+                        <div id="a" onclick="draw(this)"></div>
+                    </div>
+                    <div id="topMiddle">
+                            <div id="b" onclick="draw(this)"></div>
+                    </div>
+                    <div id="topRight">
+                            <div id="c" onclick="draw(this)"></div>
+                    </div>
+                 </div>  
+                <div id="middle">
+                    <div id="middleLeft">
+                            <div id="d" onclick="draw(this)"></div>
+                    </div>
+                    <div id="middleMiddle">
+                            <div id="e" onclick="draw(this)"></div>
+                    </div>
+                    <div id="middleRight">
+                            <div id="f" onclick="draw(this)"></div>
+                    </div>
+                </div>
+                <div id="bottom">
+                    <div id="bottomLeft">
+                            <div id="g" onclick="draw(this)"></div>
+                    </div>
+                    <div id="bottomMiddle">
+                            <div id="h" onclick="draw(this)"></div>
+                    </div>
+                    <div id="bottomRight">
+                            <div id="i" onclick="draw(this)"></div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div id="dijalog">
+            <div id="info"></div>
+            <button id="button" onclick="remove()">Click me</button>
+        </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
 </body>
 </html>
