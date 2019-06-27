@@ -1,4 +1,7 @@
-
+/*NEXT UPDATE: 
+1)MORE CLEVER(ATTACKING) COMPUTER
+2)TIMER AND SCORE
+*/
 
 var clicked = [false, false, false, false, false, false, false, false, false];
 var clickedComp = [false, false, false, false, false, false, false, false, false];
@@ -567,12 +570,6 @@ function computerPlay(el){
     }
     
 }
-
-/*provjeriti da li je zadnji potez*/
-/*provjeravati da li je kompjuter pobjedio*/
-/*provjeravati nerjeseno*/
-/*poredati funkcije tako da ne bude kao da se automatski stavlja i O*/
-/*dodati timer i bodove*/
 
 function checkComputerWin(){
     if (clickedComp[0] == true && clickedComp[1] == true && clickedComp[2] == true){
