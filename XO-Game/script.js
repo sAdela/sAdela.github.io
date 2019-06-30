@@ -1,10 +1,10 @@
 /*NEXT UPDATE: 
-1)MORE CLEVER(ATTACKING) COMPUTER
-2)TIMER AND SCORE
-*/
+1)MORE CLEVER(ATTACKING) COMPUTER 
+2)TIMER AND SCORE */
 
 var clicked = [false, false, false, false, false, false, false, false, false];
 var clickedComp = [false, false, false, false, false, false, false, false, false];
+
 
 function lastMove(){
     for (var i=0; i<9; i++){
@@ -54,46 +54,52 @@ function computerPlay(el){
         var played = el.id.charCodeAt() - 97;
         if(played == 0){
             
-            if(clicked[1] == true && clicked[2] == true && clickedComp[1] == false && clickedComp[2] == false)
-                dialog("You won");
-            else if (clicked[3] == true && clicked[6] == true && clickedComp[3] == false && clickedComp[6] == false)
-                dialog("You won");
-            else if (clicked[4] == true && clicked[8] == true && clickedComp[4] == false && clickedComp[8] == false)
+            if(clicked[1] == true && clicked[2] == true && clickedComp[1] == false && clickedComp[2] == false){
                 dialog("You won!");
+                return;
+            }
+            else if (clicked[3] == true && clicked[6] == true && clickedComp[3] == false && clickedComp[6] == false){
+                dialog("You won!");
+                return;
+            }
+            else if (clicked[4] == true && clicked[8] == true && clickedComp[4] == false && clickedComp[8] == false){
+                dialog("You won!");
+                return;
+            }
         if(!lastMove()){
-            if (clicked[1] == false && clicked[2] == true){
+            if (clicked[1] == false && clicked[2] == true && clickedComp[2] == false){
                 var id = String.fromCharCode(98);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[1] = true;
                 clickedComp[1] = true;
             }
-            else if (clicked[1] == true && clicked[2] == false){
+            else if (clicked[1] == true && clicked[2] == false && clickedComp[1] == false){
                 var id = String.fromCharCode(99);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[2] = true;
                 clickedComp[2] = true;
             }
             
-            else if (clicked[3] == true && clicked[6] == false){
+            else if (clicked[3] == true && clicked[6] == false && clickedComp[3] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
                 clickedComp[6] = true;
             }
-            else if (clicked[3] == false && clicked[6] == true){
+            else if (clicked[3] == false && clicked[6] == true && clickedComp[6] == false){
                 var id = String.fromCharCode(100);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[3] = true;
                 clickedComp[3] = true;
             }
             
-            else if (clicked[4] == true && clicked[8] == false){
+            else if (clicked[4] == true && clicked[8] == false && clickedComp[4] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[8] = true;
                 clickedComp[8] = true;
             }
-            else if (clicked[4] == false && clicked[8] == true){
+            else if (clicked[4] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
@@ -101,152 +107,162 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
-                    clicked[rand] = true;
-                    clickedComp[rand] = true;
-                    var num = rand + 97;
-                    var id = String.fromCharCode(num);
-                    $("#" + id).html("<img src=pictures/oks.png>");
-                    }
-                }  
-            checkComputerWin();
-    }
-        else if(played == 1){
-            if(clicked[0] == true && clicked[2] == true && clickedComp[0] == false && clickedComp[2] == false)
-                dialog("You won!");
-            else if (clicked[4] == true && clicked[7] == true && clickedComp[4] == false && clickedComp[7] == false)
-                dialog("You won!");
-            if(!lastMove()){
-             if(clicked[0] == false && clicked[2] == true){
-                var id = String.fromCharCode(97);
-                $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[0] = true;
-                clickedComp[0] = true;
-            }
-            else if (clicked[0] == true && clicked[2] == false){
-                var id = String.fromCharCode(99);
-                $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[2] = true;
-                clickedComp[2] = true;
-            }
-            
-            else if (clicked[4] == true && clicked[7] == false){
-                var id = String.fromCharCode(104);
-                $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[7] = true;
-                clickedComp[7] = true;
-            }
-            else if (clicked[4] == false && clicked[7] == true){
-                var id = String.fromCharCode(101);
-                $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[4] = true;
-                clickedComp[4] = true;
-            }
-            
-            else{   
-                    var rand = Math.random() * 9;
-                    while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
                     var id = String.fromCharCode(num);
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
+            }  
+        }
+        else if(played == 1){
+            if(clicked[0] == true && clicked[2] == true && clickedComp[0] == false && clickedComp[2] == false){
+                dialog("You won!");
+                return;
             }
-                checkComputerWin();
+            else if (clicked[4] == true && clicked[7] == true && clickedComp[4] == false && clickedComp[7] == false){
+                dialog("You won!");
+                return;
+            }
+            if(!lastMove()){
+             if(clicked[0] == false && clicked[2] == true && clickedComp[2] == false){
+                var id = String.fromCharCode(97);
+                $("#" + id).html("<img src=pictures/oks.png>");
+                clicked[0] = true;
+                clickedComp[0] = true;
+            }
+            else if (clicked[0] == true && clicked[2] == false && clickedComp[0] == false){
+                var id = String.fromCharCode(99);
+                $("#" + id).html("<img src=pictures/oks.png>");
+                clicked[2] = true;
+                clickedComp[2] = true;
+            }
+            
+            else if (clicked[4] == true && clicked[7] == false && clickedComp[4] == false){
+                var id = String.fromCharCode(104);
+                $("#" + id).html("<img src=pictures/oks.png>");
+                clicked[7] = true;
+                clickedComp[7] = true;
+            }
+            else if (clicked[4] == false && clicked[7] == true && clickedComp[7] == false){
+                var id = String.fromCharCode(101);
+                $("#" + id).html("<img src=pictures/oks.png>");
+                clicked[4] = true;
+                clickedComp[4] = true;
+            }
+            
+            else{   
+                var rand = parseInt(Math.random() * 9);
+                while(clicked[rand] == true)
+                    rand = parseInt(Math.random() * 9);
+                    
+                clicked[rand] = true;
+                clickedComp[rand] = true;
+                var num = rand + 97;
+                var id = String.fromCharCode(num);
+                $("#" + id).html("<img src=pictures/oks.png>");
+                }
+            }
         }
         else if(played == 2){
-            if(clicked[0] == true && clicked[1] == true && clickedComp[0] == false && clickedComp[1] == false)
+            if(clicked[0] == true && clicked[1] == true && clickedComp[0] == false && clickedComp[1] == false){
                 dialog("You won!");
-            else if (clicked[5] == true && clicked[8] == true && clickedComp[5] == false && clickedComp[8] == false)
+                return;
+            }
+            else if (clicked[5] == true && clicked[8] == true && clickedComp[5] == false && clickedComp[8] == false){
                 dialog("You won!");
-            else if (clicked[4] == true && clicked[6] == true && clickedComp[4] == false && clickedComp[6] == false)
+                return;
+            }
+            else if (clicked[4] == true && clicked[6] == true && clickedComp[4] == false && clickedComp[6] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[0] == false && clicked[1] == true){
+             if(clicked[0] == false && clicked[1] == true && clickedComp[1] == false){
                 var id = String.fromCharCode(97);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[0] = true;
                 clickedComp[0] = true;
             }
-            else if (clicked[0] == true && clicked[1] == false){
+            else if (clicked[0] == true && clicked[1] == false && clickedComp[0] == false){
                 var id = String.fromCharCode(98);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[1] = true;
                 clickedComp[1] = true;
             }
             
-            else if (clicked[5] == true && clicked[8] == false){
+            else if (clicked[5] == true && clicked[8] == false && clickedComp[5] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[9] = true;
-                clickedComp[9] = true;
+                clicked[8] = true;
+                clickedComp[8] = true;
             }
-            else if (clicked[5] == false && clicked[8] == true){
+            else if (clicked[5] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(102);
                 $("#" + id).html("<img src=pictures/oks.png>");
-                clicked[6] = true;
-                clickedComp[6] = true;
+                clicked[5] = true;
+                clickedComp[5] = true;
             }
             
-            else if (clicked[4] == true && clicked[6] == false){
+            else if (clicked[4] == true && clicked[6] == false && clickedComp[4] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
                 clickedComp[6] = true;
             }
-            else if (clicked[4] == false && clicked[6] == true){
+            else if (clicked[4] == false && clicked[6] == true && clickedComp[6] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
                 clickedComp[4] = true;
             }
             else{   
-                    var rand = Math.random() * 9;
-                    while(clicked[rand])
-                        rand = Math.random() * 9;
-                    clicked[rand] = true;
-                    clickedComp[rand] = true;
-                    var num = rand + 97;
-                    var id = String.fromCharCode(num);
-                    $("#" + id).html("<img src=pictures/oks.png>");
+                var rand = parseInt(Math.random() * 9);
+                while(clicked[rand] == true)
+                    rand = parseInt(Math.random() * 9);
+                    
+                clicked[rand] = true;
+                clickedComp[rand] = true;
+                var num = rand + 97;
+                var id = String.fromCharCode(num);
+                $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-                checkComputerWin();
         }
         else if (played == 3){
-            if(clicked[0] == true && clicked[6] == true && clickedComp[0] == false && clickedComp[6] == false)
+            if(clicked[0] == true && clicked[6] == true && clickedComp[0] == false && clickedComp[6] == false){
                 dialog("You won!");
-            else if (clicked[4] == true && clicked[5] == true && clickedComp[4] == false && clickedComp[5] == false)
+                return;
+            }
+            else if (clicked[4] == true && clicked[5] == true && clickedComp[4] == false && clickedComp[5] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[0] == false && clicked[6] == true){
+             if(clicked[0] == false && clicked[6] == true && clickedComp[6] == false){
                 var id = String.fromCharCode(97);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[0] = true;
                 clickedComp[0] = true;
             }
-            else if (clicked[0] == true && clicked[6] == false){
+            else if (clicked[0] == true && clicked[6] == false && clickedComp[0] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
                 clickedComp[6] = true;
             }
            
-            else if (clicked[4] == true && clicked[5] == false){
+            else if (clicked[4] == true && clicked[5] == false && clickedComp[4] == false){
                 var id = String.fromCharCode(102);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[5] = true;
                 clickedComp[5] = true;
             }
-            else if (clicked[4] == false && clicked[5] == true){
+            else if (clicked[4] == false && clicked[5] == true && clickedComp[5] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
@@ -254,11 +270,10 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
@@ -266,64 +281,71 @@ function computerPlay(el){
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-                checkComputerWin();
         }
         else if (played == 4){
-            if(clicked[0] == true && clicked[8] == true && clickedComp[0] == false && clickedComp[8] == false)
+            if(clicked[0] == true && clicked[8] == true && clickedComp[0] == false && clickedComp[8] == false){
                 dialog("You won!");
-            else if (clicked[1] == true && clicked[7] == true && clickedComp[1] == false && clickedComp[7] == false)
+                return;
+            }
+            else if (clicked[1] == true && clicked[7] == true && clickedComp[1] == false && clickedComp[7] == false){
                 dialog("You won!");
-            else if (clicked[2] == true && clicked[6] == true && clickedComp[2] == false && clickedComp[6] == false)
+                return;
+            }
+            else if (clicked[2] == true && clicked[6] == true && clickedComp[2] == false && clickedComp[6] == false){
                 dialog("You won!");
-            else if (clicked[3] == true && clicked[5] == true && clickedComp[3] == false && clickedComp[5] == false)
+                return;
+            }
+            else if (clicked[3] == true && clicked[5] == true && clickedComp[3] == false && clickedComp[5] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[0] == false && clicked[8] == true){
+             if(clicked[0] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(97);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[0] = true;
                 clickedComp[0] = true;
             }
-            else if (clicked[0] == true && clicked[8] == false){
+            else if (clicked[0] == true && clicked[8] == false && clickedComp[0] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[8] = true;
                 clickedComp[8] = true;
             }
             
-            else if (clicked[1] == true && clicked[7] == false){
+            else if (clicked[1] == true && clicked[7] == false && clickedComp[1] == false){
                 var id = String.fromCharCode(104);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[7] = true;
                 clickedComp[7] = true;
             }
-            else if (clicked[1] == false && clicked[7] == true){
+            else if (clicked[1] == false && clicked[7] == true && clickedComp[7] == false){
                 var id = String.fromCharCode(98);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[1] = true;
                 clickedComp[1] = true;
             }
            
-            else if (clicked[2] == true && clicked[6] == false){
+            else if (clicked[2] == true && clicked[6] == false && clickedComp[2] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
                 clickedComp[6] = true;
             }
-            else if (clicked[2] == false && clicked[6] == true){
-                var id = String.fromCharCode(98);
+            else if (clicked[2] == false && clicked[6] == true && clickedComp[6] == false){
+                var id = String.fromCharCode(99);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[2] = true;
                 clickedComp[2] = true;
             }
             
-            else if (clicked[3] == true && clicked[5] == false){
+            else if (clicked[3] == true && clicked[5] == false && clickedComp[3] == false){
                 var id = String.fromCharCode(102);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[5] = true;
                 clickedComp[5] = true;
             }
-            else if (clicked[3] == false && clicked[5] == true){
+            else if (clicked[3] == false && clicked[5] == true && clickedComp[5] == false){
                 var id = String.fromCharCode(100);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[3] = true;
@@ -331,9 +353,10 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
-                    while(clicked[rand])
-                        rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
+                    while(clicked[rand] == true)
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
@@ -341,34 +364,37 @@ function computerPlay(el){
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-                checkComputerWin();
         }
         else if (played == 5){
-            if(clicked[2] == true && clicked[8] == true && clickedComp[2] == false && clickedComp[8] == false)
+            if(clicked[2] == true && clicked[8] == true && clickedComp[2] == false && clickedComp[8] == false){
                 dialog("You won!");
-            else if (clicked[3] == true && clicked[4] == true && clickedComp[3] == false && clickedComp[4] == false)
+                return;
+            }
+            else if (clicked[3] == true && clicked[4] == true && clickedComp[3] == false && clickedComp[4] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[2] == false && clicked[8] == true){
+             if(clicked[2] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(99);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[2] = true;
                 clickedComp[2] = true;
             }
-            else if (clicked[2] == true && clicked[8] == false){
+            else if (clicked[2] == true && clicked[8] == false && clickedComp[2] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[8] = true;
                 clickedComp[8] = true;
             }
             
-            else if (clicked[3] == true && clicked[4] == false){
+            else if (clicked[3] == true && clicked[4] == false && clickedComp[3] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
                 clickedComp[4] = true;
             }
-            else if (clicked[3] == false && clicked[4] == true){
+            else if (clicked[3] == false && clicked[4] == true && clickedComp[4] == false){
                 var id = String.fromCharCode(100);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[3] = true;
@@ -376,11 +402,10 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
@@ -388,49 +413,54 @@ function computerPlay(el){
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-                checkComputerWin();
         }
         else if (played == 6){
-            if(clicked[0] == true && clicked[3] == true && clickedComp[0] == false && clickedComp[3] == false)
+            if(clicked[0] == true && clicked[3] == true && clickedComp[0] == false && clickedComp[3] == false){
                 dialog("You won!");
-            if (clicked[2] == true && clicked[4] == true && clickedComp[2] == false && clickedComp[4] == false)
+                return;
+            }
+            if (clicked[2] == true && clicked[4] == true && clickedComp[2] == false && clickedComp[4] == false){
                 dialog("You won!");
-            if (clicked[7] == true && clicked[8] == true && clickedComp[7] == false && clickedComp[8] == false)
+                return;
+            }
+            if (clicked[7] == true && clicked[8] == true && clickedComp[7] == false && clickedComp[8] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[0] == false && clicked[3] == true){
+             if(clicked[0] == false && clicked[3] == true && clickedComp[3] == false){
                 var id = String.fromCharCode(97);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[0] = true;
                 clickedComp[0] = true;
             }
-            else if (clicked[0] == true && clicked[3] == false){
+            else if (clicked[0] == true && clicked[3] == false && clickedComp[0] == false){
                 var id = String.fromCharCode(100);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[3] = true;
                 clickedComp[3] = true;
             }
             
-            else if (clicked[2] == true && clicked[4] == false){
+            else if (clicked[2] == true && clicked[4] == false && clickedComp[2] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
                 clickedComp[4] = true;
             }
-            else if (clicked[2] == false && clicked[4] == true){
+            else if (clicked[2] == false && clicked[4] == true && clickedComp[4] == false){
                 var id = String.fromCharCode(99);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[2] = true;
                 clickedComp[2] = true;
             }
             
-            else if (clicked[7] == true && clicked[8] == false){
+            else if (clicked[7] == true && clicked[8] == false && clickedComp[7] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[8] = true;
                 clickedComp[8] = true;
             }
-            else if (clicked[7] == false && clicked[8] == true){
+            else if (clicked[7] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(104);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[7] = true;
@@ -438,47 +468,48 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
                     var id = String.fromCharCode(num);
                     $("#" + id).html("<img src=pictures/oks.png>");
-                    }
                 }
-            checkComputerWin();
-
+            }
         }
         else if(played == 7){
-            if(clicked[1] == true && clicked[4] == true && clickedComp[1] == false && clickedComp[4] == false)
+            if(clicked[1] == true && clicked[4] == true && clickedComp[1] == false && clickedComp[4] == false){
                 dialog("You won!");
-            else if (clicked[6] == true && clicked[8] == true && clickedComp[6] == false && clickedComp[8] == false)
+                return;
+            }
+            else if (clicked[6] == true && clicked[8] == true && clickedComp[6] == false && clickedComp[8] == false){
                 dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[1] == false && clicked[4] == true){
+             if(clicked[1] == false && clicked[4] == true && clickedComp[4] == false){
                 var id = String.fromCharCode(98);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[1] = true;
                 clickedComp[1] = true;
             }
-            else if (clicked[1] == true && clicked[4] == false){
+            else if (clicked[1] == true && clicked[4] == false && clickedComp[1] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
                 clickedComp[4] = true;
             }
             
-            else if (clicked[6] == true && clicked[8] == false){
+            else if (clicked[6] == true && clicked[8] == false && clickedComp[6] == false){
                 var id = String.fromCharCode(105);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[8] = true;
                 clickedComp[8] = true;
             }
-            else if (clicked[6] == false && clicked[8] == true){
+            else if (clicked[6] == false && clicked[8] == true && clickedComp[8] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
@@ -486,11 +517,10 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
@@ -498,50 +528,54 @@ function computerPlay(el){
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-            checkComputerWin();
-
         }
         else if(played == 8){
-            if(clicked[0] == true && clicked[4] == true && clickedComp[0] == false && clickedComp[4] == false)
+            if(clicked[0] == true && clicked[4] == true && clickedComp[0] == false && clickedComp[4] == false){
                 dialog("You won!");
-            else if (clicked[2] == true && clicked[5] == true && clickedComp[2] == false && clickedComp[5] == false)
+                return;
+            }
+            else if (clicked[2] == true && clicked[5] == true && clickedComp[2] == false && clickedComp[5] == false){
                 dialog("You won!");
-            else if (clicked[6] == true && clicked[7] == true && clickedComp[6] == false && clickedComp[7] == false)
-                dialog("You won!"); 
+                return;
+            }
+            else if (clicked[6] == true && clicked[7] == true && clickedComp[6] == false && clickedComp[7] == false){
+                dialog("You won!");
+                return;
+            }
             if(!lastMove()){
-             if(clicked[0] == false && clicked[4] == true){
+             if(clicked[0] == false && clicked[4] == true && clickedComp[4] == false){
                 var id = String.fromCharCode(97);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[0] = true;
                 clickedComp[0] = true;
             }
-            else if (clicked[0] == true && clicked[4] == false){
+            else if (clicked[0] == true && clicked[4] == false && clickedComp[0] == false){
                 var id = String.fromCharCode(101);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[4] = true;
                 clickedComp[4] = true;
             }
             
-            else if (clicked[2] == true && clicked[5] == false){
+            else if (clicked[2] == true && clicked[5] == false && clickedComp[2] == false){
                 var id = String.fromCharCode(102);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[5] = true;
                 clickedComp[5] = true;
             }
-            else if (clicked[2] == false && clicked[5] == true){
+            else if (clicked[2] == false && clicked[5] == true && clickedComp[5] == false){
                 var id = String.fromCharCode(99);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[2] = true;
                 clickedComp[2] = true;
             }
             
-            else if (clicked[6] == true && clicked[7] == false){
+            else if (clicked[6] == true && clicked[7] == false && clickedComp[6] == false){
                 var id = String.fromCharCode(104);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[7] = true;
                 clickedComp[7] = true;
             }
-            else if (clicked[6] == false && clicked[7] == true){
+            else if (clicked[6] == false && clicked[7] == true && clickedComp[7] == false){
                 var id = String.fromCharCode(103);
                 $("#" + id).html("<img src=pictures/oks.png>");
                 clicked[6] = true;
@@ -549,11 +583,10 @@ function computerPlay(el){
             }
             
             else{   
-                    var rand = Math.random() * 9;
+                    var rand = parseInt(Math.random() * 9);
                     while(clicked[rand] == true)
-                        rand = Math.random() * 9;
-                    rand = parseInt(rand);
-                    console.log(rand);
+                        rand = parseInt(Math.random() * 9);
+                        
                     clicked[rand] = true;
                     clickedComp[rand] = true;
                     var num = rand + 97;
@@ -561,15 +594,17 @@ function computerPlay(el){
                     $("#" + id).html("<img src=pictures/oks.png>");
                 }
             }
-                checkComputerWin();
         }
+
+        checkComputerWin();
+
         if(lastMove()){
-        if(!checkComputerWin()){
-            dialog("It's draw!");
+            if(!checkComputerWin()){
+                dialog("It's draw!");
+            }
         }
-    }
-    
 }
+
 
 function checkComputerWin(){
     if (clickedComp[0] == true && clickedComp[1] == true && clickedComp[2] == true){
