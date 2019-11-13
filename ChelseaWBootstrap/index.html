@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/daneden/animate.css/master/animate.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -54,7 +55,9 @@
             <img src="img/backgr1.png">
             <div class="carousel-caption">
                 <h1 class="display-4">Chelsea Football Club</h1>
+                <div class="wow fadeIn">
                 <h4>Greatest Club In The World</h4>
+                </div>
                 <button type="button" class="btn btn-outline-light btn-lg">
                     LEARN MORE!
                 </button>
@@ -94,15 +97,18 @@
 <div class="container-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
+            <div class="wow fadeIn">
             <h1 class="display-4">Playing beautiful football.</h1>
             <hr>
             <div class="col-12">
                 <p class="lead">Founded in 1905, they compete in the Premier League, the top division of English football. Chelsea are among England's most successful clubs, having won over thirty competitive honours, including 6 top-flight titles, 8 FA Cups, 5 League Cups, 2 UEFA Europa Leagues, 2 UEFA Cup Winners' Cups, 1 UEFA Champions League, and 1 UEFA Super Cup. </p>
             </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="container-fluid padding">
+    <div class="wow fadeIn">
     <div class="row text-center padding">
         <div class="col-xs-12 col-sm-6 col-md-4">
                 <i class="fa fa-futbol-o"></i>
@@ -127,18 +133,22 @@
     <div class="row padding">
     <div class="col-lg-6">
         <div id="about">
+        <div class="wow fadeInLeft">
         <h2>Chelsea Football Club</h2>
-        <p>Chelsea won their first major honour, the League Championship, in 1955. They won the FA Cup for the first time in 1970 and their first European honour, the UEFA Cup Winners' Cup, in 1971. After a period of decline in the late 1970s and 1980s, the club enjoyed a revival in the 1990s and had more success in cup competitions. </p>
-        <p>The past two decades have been the most successful in Chelsea's history: they won five of their six league titles and the UEFA Champions League during this period. Chelsea are one of five clubs to have won all three of UEFA's main club competitions, and the only London club to have won the Champions League.</p>
-        <p>Since 2003, Chelsea have been owned by Russian billionaire Roman Abramovich.</p>
+        <p class="lead">Chelsea won their first major honour, the League Championship, in 1955. They won the FA Cup for the first time in 1970 and their first European honour, the UEFA Cup Winners' Cup, in 1971. After a period of decline in the late 1970s and 1980s, the club enjoyed a revival in the 1990s and had more success in cup competitions.
+        The past two decades have been the most successful in Chelsea's history: they won five of their six league titles and the UEFA Champions League during this period. Chelsea are one of five clubs to have won all three of UEFA's main club competitions, and the only London club to have won the Champions League.
+        Since 2003, Chelsea have been owned by Russian billionaire Roman Abramovich.</p>
         <br>
+    </div>
         <div id="learnMore">
         <a href="#" class="btn btn-primary">Learn more(going to top)</a>
         </div>
         </div>
     </div>
     <div class="col-lg-6 d-flex justify-content-center align-items-center">
+        <div class="wow fadeInRight">
             <img class="img-fluid" src="img/Chelsea1.png">
+        </div>
     </div>
 </div>
 </div>
@@ -175,13 +185,16 @@
  <div class="container-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
+            <div class="wow fadeIn">
             <h1 class="display-4">Meet the Team</h1>
+            </div>
         </div>
         <hr>
     </div>
  </div>
 <!--Cards-->
 <div class="container-fluid padding">
+<div class="wow fadeInUp">
 <div class="row padding">
     <div class="col-md-4">
         <div class="card">
@@ -213,11 +226,13 @@
                     </div>
                 </div>
         </div>
+    </div>
 </div>
 </div>
 <div class="container-fluid padding">
     <div class="row">
         <div class="col-md-6">
+            <div class="wow fadeInLeft">
             <h2>Stadium</h2>
             <br>
             <div id="textStadium">
@@ -226,14 +241,18 @@
             <p>Owing to its location next to a main road and two railway lines, fans can only enter the ground via the Fulham Road exits, which places constraints on expansion due to health and safety regulations. The club have consistently affirmed their desire to keep Chelsea at their current home.</p>
             </div>
         </div>
+        </div>
         <div class="col-md-6">
+            <div class="wow fadeInRight">
             <img src="img/stadium.jpg" class="img-fluid">
+            </div>
         </div>
     </div>
 </div>
 <!--Connect-->
 <hr class="my-4">
 <div class="container-fluid padding">
+    <div class="wow fadeIn">
     <div class="row padding text-center">
         <div class="col-12">
             <h2>Connect</h2>
@@ -245,6 +264,7 @@
             <a href="https://www.youtube.com/user/chelseafc" target="_blank"><i class="fa fa-youtube"></i></a>
 
         </div>
+    </div>
     </div>
 </div>
 <!--Footer-->
@@ -283,4 +303,9 @@
         </div>
     </div>
 </footer>
+
+<script src="https://rawgit.com/matthieua/WOW/master/dist/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
 </body>
