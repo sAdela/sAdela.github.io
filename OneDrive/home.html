@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OneDrive</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://rawgit.com/daneden/animate.css/master/animate.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+
+<body class="body-home">
+
+
+<div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        Your profile <br>
+                    </a>
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <div ></div>
+                        <img src="avatar.png" style="width:50px">
+                </li>
+                <li>
+                    <a href="#">My files</a>
+                </li>
+                <li>
+                    <a href="#">Account info</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#">Log out</a>
+                </li>
+                
+
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+                <div class="container-fluid">
+
+                <button id="menu-toggle" class="btn btn-secondary">
+
+                    </i> Your profile <i class="fa fa-filter"></i></button>                
+                </div>
+        </div>
+    </div>
+ 
+
+
+    <script src="https://rawgit.com/matthieua/WOW/master/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+       var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+         
+   
+           $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
+           $("#wrapper").toggleClass("toggled");
+   
+         if(isIE11){
+             if($("#wrapper").hasClass("toggled")){
+           $('#sidebar-wrapper').css("margin-left", "-268px")
+         } else {
+           $('#sidebar-wrapper').css("margin-left", "-250px")	
+             }	 
+       }
+       });
+    </script>
+    </body>
+</html>
